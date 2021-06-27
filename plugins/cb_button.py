@@ -41,18 +41,18 @@ async def view_chat_config(client: Bot, cb: CallbackQuery):
     f = bool(query.caption)
     g = bool(query.file_caption)
     await cb.answer(text=Presets.VIEW_CONF.format(
-        a if bool(query.s_chat) is bool(1) else "❎",
-        b if bool(query.d_chat) is bool(1) else "❎",
-        c if bool(query.from_id) is bool(1) else "❎",
-        d if bool(query.to_id) is bool(1) else "❎",
-        "✅" if e is bool(1) else "❎",
-        "✅" if f is bool(1) else "❎",
-        "✅" if g is bool(1) else "❎",
-        "✅" if "document" in file_types else "❎",
-        "✅" if "video" in file_types else "❎",
-        "✅" if "audio" in file_types else "❎",
-        "✅" if "photo" in file_types else "❎",
-        "✅" if "voice" in file_types else "❎"
+        a if bool(query.s_chat) is bool(1) else "✖️",
+        b if bool(query.d_chat) is bool(1) else "✖️",
+        c if bool(query.from_id) is bool(1) else "✖️",
+        d if bool(query.to_id) is bool(1) else "✖️",
+        "✔️" if e is bool(1) else "✖️",
+        "✔️" if f is bool(1) else "✖️",
+        "✔️" if g is bool(1) else "✖️",
+        "✔️" if "document" in file_types else "✖️",
+        "✔️" if "video" in file_types else "✖️",
+        "✔️" if "audio" in file_types else "✖️",
+        "✔️" if "photo" in file_types else "✖️",
+        "✔️" if "voice" in file_types else "✖️"
     ), show_alert=True)
 
 
@@ -103,11 +103,11 @@ async def set_types(client: Bot, cb: CallbackQuery):
 
 @Client.on_callback_query(filters.regex(r'^view_types$'))
 async def view_file_types(client: Bot, cb: CallbackQuery):
-    await cb.answer(Presets.SELECTED_TYPE.format("✅" if "document" in file_types else "❎",
-                                                 "✅" if "audio" in file_types else "❎",
-                                                 "✅" if "video" in file_types else "❎",
-                                                 "✅" if "photo" in file_types else "❎",
-                                                 "✅" if "voice" in file_types else "❎",
+    await cb.answer(Presets.SELECTED_TYPE.format("✔️" if "document" in file_types else "✖️",
+                                                 "✔️" if "audio" in file_types else "✖️",
+                                                 "✔️" if "video" in file_types else "✖️",
+                                                 "✔️" if "photo" in file_types else "✖️",
+                                                 "✔️" if "voice" in file_types else "✖️",
                                                  ),
                     True
                     )
