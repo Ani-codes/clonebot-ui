@@ -125,9 +125,9 @@ async def clone_medias(client: Bot, message: Message):
                             "0" if bool(start_id) == bool(0) else start_id,
                             int(messages.message_id),
                             end_msg_id if bool(end_id) == bool(0) else end_id,
-                            "✅" if bool(clone_delay) == bool(1) else "❎",
-                            "✅" if bool(default_caption) == bool(1) else "❎",
-                            "✅" if bool(fn_caption) == bool(1) else "❎",
+                            "✔️" if bool(clone_delay) == bool(1) else "✖️",
+                            "✔️" if bool(default_caption) == bool(1) else "✖️",
+                            "✔️" if bool(fn_caption) == bool(1) else "✖️",
                             int(total_copied),
                             trunc(pct) if pct <= 100 else "- ",
                             doc_files,
@@ -165,7 +165,7 @@ async def clone_medias(client: Bot, message: Message):
                         await msg.delete()
                     return
                 try:
-                    await msg1.edit("🇮🇳 | " + progress if pct <= 100 else Presets.BLOCK, reply_markup=reply_markup_stop)
+                    await msg1.edit("➠" + progress if pct <= 100 else Presets.BLOCK, reply_markup=reply_markup_stop)
                 except Exception:
                     pass
                 await asyncio.sleep(delay)
