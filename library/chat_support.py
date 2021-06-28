@@ -36,7 +36,7 @@ async def calc_percentage(sp, ep, message_id):
 # Function to show the process graph
 async def calc_progress(pct):
     progress = int()
-    progress = (int(pct)//10 * "⬛️ " + (10-int(pct)//10) * "◻️ ")
+    progress = (int(pct)//10 * "▓" + (10-int(pct)//10) * "░")
     return progress
 
 
