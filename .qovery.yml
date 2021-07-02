@@ -1,0 +1,11 @@
+---
+application:
+  name: "clonebot-ui"
+  project: "AniMusic"
+  organization: "QoveryCommunity"
+routers:
+- name: "main-clonebot-ui"
+  routes:
+  - application_name: "clonebot-ui"
+    paths:
+    - "/*"
